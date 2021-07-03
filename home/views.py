@@ -4,7 +4,7 @@ from django.views.generic import DetailView
 # Create your views here.
 
 def home(request):
-	products = Product.objects.all().filter(is_available=True)
+	products = Product.objects.all().filter(is_available=True).order_by('-published_date')
 	context = {
 		'products' : products
 	}

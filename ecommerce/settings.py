@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'category',
     'store',
     'cart',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -68,12 +69,14 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',
+                'cart.context_processors.counter',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
